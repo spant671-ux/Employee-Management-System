@@ -10,6 +10,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Manrope', sans-serif;
+    color: #fff;
   }
 }
 html,
@@ -20,7 +21,6 @@ body {
 
 body{
   background: #111;
-  color: white;
 }
 
 #tasklist::-webkit-scrollbar{
