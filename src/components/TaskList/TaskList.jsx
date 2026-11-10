@@ -1,49 +1,31 @@
+import AcceptTask from './AcceptTask'
+import NewTask from './NewTask'
+import CompleteTask from './CompleteTask'
+import FailedTask from './FailedTask'
 
-
-const TaskList = () => {
+const TaskList = ({ data }) => {
   return (
-    <div 
-    id = "tasklist"
-    className="h-[55%] overflow-x-auto flex items-center justify-start gap-5 flex-nowrap w-full py-5 mt-10">
-        <div className="shrink-0 h-full w-75 bg-red-400 p-5 rounded-xl">
-            <div className="flex justify-between items-center">
-                <h3 className="bg-red-600 px-3 py-1 text-sm rounded">High</h3>
-                <h4 className="text-sm">4 Dec 2026</h4>
-            </div>
-            <h2 className="mt-5 text-2xl font-semibold">Make a Youtube video</h2>
-            <p className="text-sm mt-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A minima necessitatibus vitae eos voluptatum corrupti.</p>
-        </div>
-
-        <div className="shrink-0 h-full w-75 bg-green-400 p-5 rounded-xl">
-            <div className="flex justify-between items-center">
-                <h3 className="bg-red-600 px-3 py-1 text-sm rounded">High</h3>
-                <h4 className="text-sm">4 Dec 2026</h4>
-            </div>
-            <h2 className="mt-5 text-2xl font-semibold">Make a Youtube video</h2>
-            <p className="text-sm mt-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A minima necessitatibus vitae eos voluptatum corrupti.</p>
-        </div>
-
-        <div className="shrink-0 h-full w-75 bg-blue-400 p-5 rounded-xl">
-            <div className="flex justify-between items-center">
-                <h3 className="bg-red-600 px-3 py-1 text-sm rounded">High</h3>
-                <h4 className="text-sm">4 Dec 2026</h4>
-            </div>
-            <h2 className="mt-5 text-2xl font-semibold">Make a Youtube video</h2>
-            <p className="text-sm mt-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A minima necessitatibus vitae eos voluptatum corrupti.</p>
-        </div>
-
-        <div className="shrink-0 h-full w-75 bg-yellow-400 p-5 rounded-xl">
-            <div className="flex justify-between items-center">
-                <h3 className="bg-red-600 px-3 py-1 text-sm rounded">High</h3>
-                <h4 className="text-sm">4 Dec 2026</h4>
-            </div>
-            <h2 className="mt-5 text-2xl font-semibold">Make a Youtube video</h2>
-            <p className="text-sm mt-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A minima necessitatibus vitae eos voluptatum corrupti.</p>
-        </div>
-
-
+    <div
+      id='tasklist'
+      className='h-[50%] overflow-x-auto flex items-center justify-start gap-5 flex-nowrap w-full py-1 mt-16'
+    >
+      {data?.tasks?.map((elem, idx) => {
+        if (elem.active) {
+          return <AcceptTask key={idx} data={elem} />
+        }
+        if (elem.newTask) {
+          return <NewTask key={idx} data={elem} />
+        }
+        if (elem.completed) {
+          return <CompleteTask key={idx} data={elem} />
+        }
+        if (elem.failed) {
+          return <FailedTask key={idx} data={elem} />
+        }
+        return null
+      })}
     </div>
   )
 }
 
-export default TaskList 
+export default TaskList
