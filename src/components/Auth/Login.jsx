@@ -30,7 +30,7 @@ const Login = () => {
                 onChange={(e) => {
                   setEmail(e.target.value)
                 }}
-                className="border-2 text-white border-emerald-600 py-3 px-5 text-xl outline-none bg-transparent placeholder:text-gray-400 rounded-full" />
+                className="border-2 border-emerald-600 py-3 px-5 text-xl outline-none bg-transparent placeholder:text-gray-400 rounded-full" />
 
                 <input type="password" 
                 required
@@ -39,9 +39,9 @@ const Login = () => {
                 onChange={(e) => {
                   setPassword(e.target.value)
                 }}
-                className="border-2 text-white mt-3 border-emerald-600 py-3 px-5 text-xl outline-none bg-transparent placeholder:text-gray-400 rounded-full" />
+                className="border-2 mt-3 border-emerald-600 py-3 px-5 text-xl outline-none bg-transparent placeholder:text-gray-400 rounded-full" />
 
-                <button className="border-none mt-7 bg-emerald-600 py-3 px-5 text-xl text-white outline-none placeholder:text-white rounded-full">Login</button>
+                <button className="border-none mt-7 bg-emerald-600 py-3 px-5 text-xl outline-none rounded-full">Login</button>
             </form>
         </div>
     </div>

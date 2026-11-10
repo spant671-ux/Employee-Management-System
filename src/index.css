@@ -20,6 +20,7 @@ body {
 
 body{
   background: #111;
+  color: white;
 }
 
 #tasklist::-webkit-scrollbar{
