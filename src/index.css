@@ -21,3 +21,7 @@ body {
 body{
   background: #111;
 }
+
+#tasklist::-webkit-scrollbar{
+  display: none;
+}
